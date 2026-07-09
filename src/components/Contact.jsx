@@ -1,6 +1,4 @@
-import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 import { HiOutlinePaperAirplane, HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone } from 'react-icons/hi'
 import { profile, socials } from '../data/content'
 import MagneticButton from './MagneticButton'
@@ -10,29 +8,22 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 }
 
-const SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID'
-const TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID'
-const PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY'
-
 export default function Contact() {
-  const formRef = useRef(null)
-  const [status, setStatus] = useState('idle') // idle | sending | success | error
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    setStatus('sending')
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY).then(
-      () => {
-        setStatus('success')
-        formRef.current.reset()
-        setTimeout(() => setStatus('idle'), 4000)
-      },
-      () => {
-        setStatus('error')
-        setTimeout(() => setStatus('idle'), 4000)
-      }
-    )
+    const formData = new FormData(e.currentTarget)
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const subject = formData.get('subject')
+    const message = formData.get('message')
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      profile.email
+    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer')
+    e.currentTarget.reset()
   }
 
   return (
@@ -111,7 +102,6 @@ export default function Contact() {
           </motion.div>
 
           <motion.form
-            ref={formRef}
             onSubmit={handleSubmit}
             initial="hidden"
             whileInView="show"
@@ -124,7 +114,7 @@ export default function Contact() {
                 <label className="text-xs text-ink/50 mb-1.5 block">Name</label>
                 <input
                   required
-                  name="user_name"
+                  name="name"
                   type="text"
                   placeholder="Your name"
                   className="w-full rounded-xl bg-primary/30 border border-ink/10 px-4 py-3 text-ink placeholder:text-ink/30 outline-none focus:border-accent transition-colors"
@@ -134,7 +124,7 @@ export default function Contact() {
                 <label className="text-xs text-ink/50 mb-1.5 block">Email</label>
                 <input
                   required
-                  name="user_email"
+                  name="email"
                   type="email"
                   placeholder="you@example.com"
                   className="w-full rounded-xl bg-primary/30 border border-ink/10 px-4 py-3 text-ink placeholder:text-ink/30 outline-none focus:border-accent transition-colors"
@@ -162,19 +152,11 @@ export default function Contact() {
               />
             </div>
 
-            <MagneticButton type="submit" className="btn-primary w-full sm:w-auto justify-center" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
+            <MagneticButton type="submit" className="btn-primary w-full sm:w-auto justify-center">
+              Send Message
               <HiOutlinePaperAirplane size={16} className="rotate-90" />
             </MagneticButton>
 
-            {status === 'success' && (
-              <p className="text-sm text-accent">Message sent — I&apos;ll get back to you soon!</p>
-            )}
-            {status === 'error' && (
-              <p className="text-sm text-red-400">
-                Something went wrong. Please add your EmailJS credentials in Contact.jsx, or email me directly.
-              </p>
-            )}
           </motion.form>
         </div>
       </div>

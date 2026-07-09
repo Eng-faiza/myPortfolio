@@ -5,6 +5,7 @@ import { profile } from '../data/content'
 import MagneticButton from './MagneticButton'
 import GsapReveal from './GsapReveal'
 
+
 function useTypingEffect(words, speed = 90, pause = 1400) {
   const [text, setText] = useState('')
   const [wordIndex, setWordIndex] = useState(0)
@@ -118,7 +119,7 @@ export default function Hero() {
           <div className="absolute -inset-4 rounded-[2rem] bg-accent-gradient opacity-20 blur-2xl animate-pulse" />
           <div className="gradient-border glass relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden">
             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-secondary to-primary">
-              <span className="font-display text-7xl font-bold text-ink/20">FM</span>
+              <img src={profile.image} alt={profile.name} className="font-display text-7xl font-bold text-ink/20" />
             </div>
             <div className="absolute bottom-4 left-4 right-4 glass rounded-xl px-4 py-3 flex items-center justify-between">
               <span className="font-display text-sm text-ink">Available for work</span>

@@ -24,24 +24,36 @@ import {
 } from 'react-icons/si'
 import { VscVscode } from 'react-icons/vsc'
 import { HiOutlineMail } from 'react-icons/hi'
+import habraac from '../images/habraac.png'
+import global from '../images/global.jpg'
+import horyaal from '../images/horyaal.png'
+import sssh from '../images/somalisudanes.png'
+import internship from '../images/interneship.png'
+import exam from '../images/exam.jpg'
+import vaccine from '../images/vaccinations.jpg'
+import workers from '../images/emAwk.jpg'
+import remindme from '../images/rdme.jpeg'
 
 export const profile = {
   name: 'Faiza Mahdi',
   roles: ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver'],
   tagline:
     'I design and develop modern, scalable, responsive, and user-friendly web applications with beautiful user experiences.',
-  resumeUrl: '/resume.pdf',
-  email: 'hello@faizamahdi.dev',
+  resumeUrl: '/Faiza_Mahdi_Professional_CV.pdf',
+  email: 'faizamahdi76@gmail.com',
   location: 'Mogadishu, Somalia',
+  image: '/profile.jpeg',
+  logo: '/logo.png',
+  whiteLogo: '/nobg.png',
 }
 
 export const socials = [
-  { name: 'GitHub', icon: FaGithub, url: 'https://github.com/' },
-  { name: 'LinkedIn', icon: FaLinkedin, url: 'https://linkedin.com/' },
-  { name: 'Facebook', icon: FaFacebook, url: 'https://facebook.com/' },
-  { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com/' },
-  { name: 'WhatsApp', icon: FaWhatsapp, url: 'https://wa.me/' },
-  { name: 'Email', icon: HiOutlineMail, url: 'mailto:hello@faizamahdi.dev' },
+  { name: 'GitHub', icon: FaGithub, url: 'https://github.com/Eng-faiza/' },
+  { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/faiza-mahdi-a53b1335a' },
+  { name: 'Facebook', icon: FaFacebook, url: 'https://facebook.com/faizamahdi' },
+  { name: 'Instagram', icon: FaInstagram, url: 'https://instagram.com/faa_z_m' },
+  { name: 'WhatsApp', icon: FaWhatsapp, url: 'https://wa.me/612310405' },
+  { name: 'Email', icon: HiOutlineMail, url: 'mailto:faizamahdi76@gmail.com' },
 ]
 
 export const navLinks = [
@@ -56,9 +68,9 @@ export const navLinks = [
 ]
 
 export const stats = [
-  { label: 'Projects Completed', value: 24, suffix: '+' },
+  { label: 'Projects Completed', value: 15, suffix: '+' },
   { label: 'Happy Clients', value: 15, suffix: '+' },
-  { label: 'Years Learning', value: 3, suffix: '+' },
+  { label: 'Years Learning', value: 4, suffix: '+' },
   { label: 'Technologies Mastered', value: 18, suffix: '+' },
 ]
 
@@ -71,7 +83,7 @@ export const aboutContent = {
     'Comfortable owning a project from database schema to pixel-perfect UI',
   ],
   education: [
-    { school: 'BSc. Computer Science', period: '2021 — 2025', detail: 'Focused on software engineering and human-computer interaction' },
+    { school: 'BSc. Computer Science', period: '2022 — 2026', detail: 'Focused on software engineering and human-computer interaction' },
   ],
   goals:
     'My goal is to keep building products that feel effortless to use, while mentoring the next generation of developers and designers along the way.',
@@ -141,21 +153,54 @@ export const services = [
 
 export const projects = [
   {
+    title: 'habraac website',
+    description:
+      'technology company website that showcases their services, portfolio,team members and more other informations.',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    demo: 'https://habraac.com/',
+    github: '#',
+    image:habraac,
+  },
+  {
+    title: 'global fertility website ',
+    description: 'A modern website for global fertility Hospital with appointment booking and information sections.',
+    tags: ['react.js', 'Node.js', 'MongoDB'],
+    demo: 'https://global.habtech.app/',
+    github: '#',
+    image: global,
+  },
+  {
+    title: 'horyaal hospital website ',
+    description: 'A modern website for Horyaal Hospital with appointment booking and information sections.',
+    tags: ['react.js', 'Node.js', 'MongoDB'],
+    demo: 'https://horyaal.habtech.app/',
+    github: '#',
+    image: horyaal,
+  },
+  {
+    title: 'somali sudanes hospital website ',
+    description: 'A modern website for somali sudanes Hospital with appointment booking and information sections.',
+    tags: ['react.js', 'Node.js', 'MongoDB'],
+    demo: 'https://ssshospital.so/',
+    github: '#',
+    image: sssh,
+  },
+  {
     title: 'Student Internship Management System',
     description:
       'A platform that streamlines internship applications, tracking, and evaluation for students and coordinators.',
     tags: ['React', 'Node.js', 'MongoDB'],
     demo: '#',
     github: '#',
-    image: 'internship',
+    image: internship,
   },
   {
-    title: 'Doctor Appointment System',
-    description: 'Book, manage, and track medical appointments with real-time availability.',
+    title: 'university exam management System',
+    description: 'A system for managing university exams, including scheduling, registration, and attendance management.',
     tags: ['React', 'Express', 'MongoDB'],
     demo: '#',
     github: '#',
-    image: 'doctor',
+    image: exam,
   },
   {
     title: 'Vaccination Management System',
@@ -163,47 +208,24 @@ export const projects = [
     tags: ['React', 'Supabase', 'Tailwind'],
     demo: '#',
     github: '#',
-    image: 'vaccine',
+    image: vaccine,
   },
-  {
-    title: 'Apartment Rental System',
-    description: 'A marketplace connecting landlords and tenants with listings and secure payments.',
-    tags: ['Next.js', 'Node.js', 'MongoDB'],
-    demo: '#',
-    github: '#',
-    image: 'apartment',
-  },
-  {
-    title: 'Event Booking System',
-    description: 'Discover, book, and manage tickets for local events in real time.',
-    tags: ['React', 'Express', 'REST API'],
-    demo: '#',
-    github: '#',
-    image: 'event',
-  },
-  {
-    title: 'Smart Greenhouse System',
-    description: 'IoT-integrated dashboard for monitoring and automating greenhouse conditions.',
-    tags: ['React', 'Node.js', 'IoT'],
-    demo: '#',
-    github: '#',
-    image: 'greenhouse',
-  },
+  
   {
     title: 'Workers & Employers Platform',
     description: 'A marketplace connecting skilled workers with employers for short and long-term work.',
     tags: ['React', 'MongoDB', 'Express'],
     demo: '#',
     github: '#',
-    image: 'workers',
+    image: workers,
   },
   {
-    title: 'StyleHub Flutter App',
-    description: 'A cross-platform fashion e-commerce app with a smooth, native-feeling UI.',
+    title: 'remindme Flutter App',
+    description: 'A cross-platform reminder app with a smooth, native-feeling UI.',
     tags: ['Flutter', 'Supabase'],
     demo: '#',
     github: '#',
-    image: 'stylehub',
+    image: remindme,
   },
 ]
 
@@ -212,15 +234,15 @@ export const timeline = [
     type: 'Education',
     title: 'BSc. Computer Science',
     place: 'University',
-    period: '2021 — 2025',
+    period: '2022 — 2026',
     description: 'Studied software engineering, databases, and human-computer interaction.',
   },
   {
     type: 'Certification',
     title: 'Full Stack Web Development',
-    place: 'Online Certification',
-    period: '2022',
-    description: 'Completed an intensive program covering the MERN stack.',
+    place: 'Online and offline Certification',
+    period: '2022-2026',
+    description: 'Completed an intensive program covering the MERN stack and other stacks. ',
   },
   {
     type: 'Project',

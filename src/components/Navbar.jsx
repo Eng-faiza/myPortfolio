@@ -44,12 +44,12 @@ export default function Navbar({ theme, toggleTheme }) {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+      className={`fixed top-0 left-3 right-3 z-40 transition-all duration-500 ${
         scrolled ? 'py-3' : 'py-6'
       }`}
     >
       <nav
-        className={`section-container flex items-center justify-between rounded-2xl transition-all duration-500 ${
+        className={`section-container flex items-center justify-between rounded-2xl transition-all duration-500  ${
           scrolled ? 'glass-strong px-6 py-3 shadow-card' : 'px-2 py-2'
         }`}
       >
@@ -62,6 +62,7 @@ export default function Navbar({ theme, toggleTheme }) {
           className="font-display text-xl font-bold text-ink"
           data-cursor="hover"
         >
+          {/* <img src={profile.whiteLogo} alt={profile.name} className='w-20 h-' /> */}
           Faiza<span className="text-accent">.</span>
         </a>
 
@@ -96,7 +97,8 @@ export default function Navbar({ theme, toggleTheme }) {
             onClick={toggleTheme}
             data-cursor="hover"
             aria-label="Toggle theme"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink/80 hover:text-accent hover:border-accent transition-colors"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink/80 transition-colors hover:text-accent hover:border-accent dark:text-white dark:border-white/25 dark:hover:text-accent"
           >
             {theme === 'dark' ? <HiOutlineSun size={18} /> : <HiOutlineMoon size={18} />}
           </button>
@@ -145,11 +147,12 @@ export default function Navbar({ theme, toggleTheme }) {
               <button
                 onClick={() => {
                   toggleTheme()
+                  setOpen(false)
                 }}
-                className="flex items-center gap-2 font-display text-ink/70"
+                className="flex items-center gap-2 font-display text-ink/70 dark:text-white"
               >
                 {theme === 'dark' ? <HiOutlineSun size={18} /> : <HiOutlineMoon size={18} />}
-                Toggle theme
+                {theme === 'dark' ? 'Light mode' : 'Dark mode'}
               </button>
             </div>
           </motion.div>

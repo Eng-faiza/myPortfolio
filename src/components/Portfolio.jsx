@@ -66,9 +66,7 @@ export default function Portfolio() {
                 <TiltCard className="group gradient-border glass rounded-2xl overflow-hidden h-full flex flex-col">
                   <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-secondary to-primary">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="font-display text-4xl font-bold text-ink/10 uppercase tracking-wider">
-                        {project.image}
-                      </span>
+                      <img src={project.image} alt={project.title} className="font-display text-4xl font-bold text-ink/10 uppercase tracking-wider" />
                     </div>
                     <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center gap-4">
                       <a
