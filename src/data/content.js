@@ -24,6 +24,7 @@ import {
 } from 'react-icons/si'
 import { VscVscode } from 'react-icons/vsc'
 import { HiOutlineMail } from 'react-icons/hi'
+import profile from '../images/profile.jpeg'
 import habraac from '../images/habraac.png'
 import global from '../images/global.jpg'
 import horyaal from '../images/horyaal.png'
@@ -42,7 +43,7 @@ export const profile = {
   resumeUrl: '/Faiza_Mahdi_Professional_CV.pdf',
   email: 'faizamahdi76@gmail.com',
   location: 'Mogadishu, Somalia',
-  image: '/profile.jpeg',
+  image: profile,
   logo: '/logo.png',
   whiteLogo: '/nobg.png',
 }
