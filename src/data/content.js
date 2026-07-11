@@ -191,7 +191,7 @@ export const projects = [
     description:
       'A platform that streamlines internship applications, tracking, and evaluation for students and coordinators.',
     tags: ['React', 'Node.js', 'MongoDB'],
-    demo: '#',
+    demo: 'https://mis-pi-woad.vercel.app/',
     github: '#',
     image: internship,
   },
